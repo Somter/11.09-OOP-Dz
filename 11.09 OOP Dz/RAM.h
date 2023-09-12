@@ -5,6 +5,7 @@ class RAM
 		char* name_ram;
 	public:
 		RAM(const char* nameR);	
+		RAM(const RAM& obj);	
 		void PrintRAM();	
 		~RAM();
 };

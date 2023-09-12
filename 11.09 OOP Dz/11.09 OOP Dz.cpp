@@ -10,13 +10,14 @@
 using namespace std;    
 const int MAX_LAPTOPS = 50; 
 int main()
-{   
-    Laptop lapt1("Huawei matebook d 15", "Grey", 811.88, "intel core i7", "Kingston SSDNow A400", "RTX 4070 Ti X3", "Kingston FURY Beast Black RGB ");  
-    lapt1.PrintLaptop();            
+{
+    Laptop lapt1("Huawei matebook d 15", "Grey", 811.88, "intel core i7", "Kingston SSDNow A400", "RTX 4070 Ti X3", "Kingston FURY Beast Black RGB ");
+    lapt1.PrintLaptop();
+
     for (int i = 0; i < 35; i++)
         cout << "-";
-    cout << "\n";    
-           
+    cout << "\n";
+
     cout << "Enter model: ";
     char Buff_model[100];
     cin >> Buff_model;
@@ -43,20 +44,34 @@ int main()
 
     cout << "Enter video RAM: ";
     char Buff_Ram[100];
-    cin >> Buff_Ram;  
+    cin >> Buff_Ram;
 
     for (int i = 0; i < 35; i++)
         cout << "-";
     cout << "\n";
 
-    Laptop lapt2(Buff_model, Buff_color, Buff_price, Buff_CPU, Buff_SSD, Buff_Video_Card, Buff_Ram);    
-    lapt2.PrintLaptop();  
+    Laptop lapt2(Buff_model, Buff_color, Buff_price, Buff_CPU, Buff_SSD, Buff_Video_Card, Buff_Ram);
+    lapt2.PrintLaptop();
+    
+    for (int i = 0; i < 35; i++)
+        cout << "-";
+    cout << "\n";   
+  
+    cout << "Number of laptops: " << Laptop::GetCount() << endl;
+    cout << "Copied information from lapt 1 to lapt 2:\n";  
 
     for (int i = 0; i < 35; i++)
         cout << "-";
-    cout << "\n"; 
+    cout << "\n";
 
-    cout << "Number of laptops: " << Laptop::GetCount() << endl;
+    Laptop lapt3(lapt1);  
+
+    for (int i = 0; i < 35; i++)
+        cout << "-";    
+    cout << "\n";
+
+    lapt3.PrintLaptop();    
+
         
 }
 
